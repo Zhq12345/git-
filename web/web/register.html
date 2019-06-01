@@ -1,0 +1,197 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎进入注册页面</title>
+<script language="javascript">
+function checkname(){
+var div = document.getElementById("div1");
+div.innerHTML = "";
+var name1 = document.form1.text1.value;
+if (name1 == "") {
+div.innerHTML = "<font color=red>姓名不能为空！</font>";
+document.form1.text1.focus();
+return false;
+}
+if (name1.length < 4 || name1.length > 16) {
+div.innerHTML = "<font color=red>姓名输入的长度4-16个字符！</font>";
+document.form1.text1.select();
+return false;
+}
+return true;
+}
+function checkpassword(){
+var div = document.getElementById("div2");
+div.innerHTML = "";
+var password = document.form1.text2.value;
+if (password == "") {
+div.innerHTML = "<font color=red>密码不能为空！</font>";
+document.form1.text2.focus();
+return false;
+}
+if (password.length < 4 || password.length > 12) {
+div.innerHTML = "<font color=red>密码长度4-12位</font>";
+document.form1.text2.select();
+return false;
+}
+return true;
+}
+function checkrepassword(){
+var div = document.getElementById("div3");
+div.innerHTML = "";
+var password = document.form1.text2.value;
+var repass = document.form1.text3.value;
+if (repass == "") {
+div.innerHTML = "<font color=red>密码不能为空！</font>";
+document.form1.text3.focus();
+return false;
+}
+if (password != repass) {
+div.innerHTML = "<font color=red>输入密码和确认密码长度不一致</font>";
+document.form1.text3.select();
+return false;
+}
+return true;
+}
+function checkEmail(){
+var div = document.getElementById("div4");
+div.innerHTML = "";
+var email = document.form1.text4.value;
+var sw = email.indexOf("@", 0);
+var sw1 = email.indexOf(".", 0);
+var tt = sw1 - sw;
+if (email.length == 0) {
+div.innerHTML = "<font color=red>电子邮件不能为空</font>";
+document.form1.text4.focus();
+return false;
+}
+if (email.indexOf("@", 0) == -1) {
+div.innerHTML = "<font color=red>电子邮件格式不正确，必须包含@符号！</font>";
+document.form1.text4.select();
+return false;
+}
+if (email.indexOf(".", 0) == -1) {
+div.innerHTML = "<font color=red>电子邮件格式不正确，必须包含.符号！</font>";
+document.form1.text4.select();
+return false;
+}
+if (tt == 1) {
+div.innerHTML = "<font color=red>邮件格式不对。@和.不可以挨着！</font>";
+document.form1.text4.select();
+return false;
+}
+if (sw > sw1) {
+div.innerHTML = "<font color=red>电子邮件格式不正确，@符号必须在.之前</font>";
+document.form1.text4.select();
+return false;
+}
+else {
+return true;
+}
+return ture;
+}
+function checkPhone(){
+var div = document.getElementById("div5");
+div.innerHTML = "";
+var phone = document.form1.text5.value;
+if (phone == "") {
+div.innerHTML = "<font color=red>手机号不能为空！</font>";
+document.form1.text5.focus();
+return false;
+}
+if (phone.length == 11) {
+div.innerHTML = "<font color=red>手机号码只能为11个字符！</font>";
+document.form1.text5.select();
+return false;
+}
+return true;
+}
+function check(){
+if (checkname() && checkpassword() && checkrepassword() && checkEmail()&&checkPhone()) {
+var a = document.form1.text1.value;
+var b = document.form1.text2.value;
+var c = document.form1.text4.value;
+var d = document.form1.text5.value;
+var e = document.form1.text6.value;
+alert("用户名:"+a+",密码:"+b+",邮件："+c+",手机号码是:"+d+".学历是:"+e+",爱好：");
+return true;
+}
+else {
+return false;
+}
+}
+</script>
+</head>
+<body>
+<form name="form1" onSubmit="return check()">
+<table border="1" align="center">
+<tr>
+<td>
+<div align="right">用户名：</div></td>
+<td>
+<input id="text1" type="text" name="text1" onBlur="check()">
+<div id="div1" style="display:inline;"> </div> </td>
+</tr>
+<tr>
+<td>
+<div align="right">密码： </div></td>
+<td>
+<input id="text2" type="password" name="text2" onBlur="check()">
+<div id="div2" style="display:inline"> </div> </td>
+</tr>
+<tr>
+<td>
+<div align="right">确认密码： </div></td>
+<td>
+<input id="text3" type="password" name="text3" onBlur="check()">
+<div id="div3" style="display:inline"> </div> </td>
+</tr>
+<tr>
+<td>
+<div align="right">电子邮件地址： </div></td>
+<td>
+<input id="text4" type="text" name="text4" onBlur="check()">
+<div id="div4" style="display:inline"> </div> </td>
+</tr>
+<tr>
+<td>
+<div align="right">手机号码： </div></td>
+<td>
+<input id="text5" type="text" name="text5" onBlur="check()">
+<div id="div5" style="display:inline"> </div> </td>
+</tr>
+<tr align="center">
+<td><div align="right">出生日期：</div></td>
+<td><div align="left">
+<select name="text6">
+<option value="1990">1990</option>
+<option value="1991">1991</option>
+<option value="1992">1992</option>
+<option value="1993">1993</option>
+<option value="1994">1994</option>
+<option value="1995">1995</option>
+<option value="1996">1996</option>
+<option value="1996">1997</option>
+<option value="1996">1998</option>
+<option value="1996">1999</option>
+<option value="1996">2000</option>
+</select>
+</div></td>
+</tr>
+<tr align="center">
+<td align="center"><div align="right">性别：</div></td>
+<td align="center">
+<input type="checkbox" name="text11" value="男">
+男
+<input type="checkbox" name="checkbox12" value="女">
+女
+</td>
+</tr>
+<tr align="center">
+<td align="center"><input type="submit" value="提交" name="text8">
+<input type="reset" value="重置" name="text9"></td>
+<td align="center"> </td>
+</tr>
+</table>
+</form>
+</body>
+</html>

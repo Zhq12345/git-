@@ -1,0 +1,65 @@
+<!!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>页面布局</title>
+		<link rel="stylesheet"style="text/css" href="../css/index.css">
+		<script type="text/javaScript">
+  today=new Data();
+  funtion data(){
+  	this.length=data.arguments.length
+  	for(var i=0;i<this.length;i++)
+  	    this[i+1]=data.arguments[i];
+  	}
+  var d=new data("星期日","星期一","学期二","星期三","星期四","星期五","星期六");
+  document.write("<foot color=##000000 style='font-size: 9pt;font-family: 宋体;'>",today.yetYear(),"年",
+  today.getMonth()+1,"月",today.getDate(),"日",d[today.getDay()+1],"</font>";
+  return true;
+  }
+
+</script>
+	</head>
+	<body>
+		<div id="header">
+			<div id="logo">
+			<img src="../img/images/logo.gif" border="0"/><br/>
+			<span>2015年春季学期&nbsp;&nbsp;&nbsp;&nbsp;当前用户：小李（管理员）</span>
+			</div>
+			<div id="banner">好好学习，天天向上</div>
+			<div id="shizhong">
+					<script language=javascript>
+                    var int=self.setInterval("clock()",50)
+                    function clock()
+                      {
+                         var dateTime=new Date();
+                         var hh=dateTime.getHours();
+                         var mm=dateTime.getMinutes();
+                         var ss=dateTime.getSeconds();
+                         var time=hh+":"+mm+":"+ss;
+                         document.getElementById("clock").value=time
+                       }
+                    </script>
+                    <input type="text" id="clock" size="6" align="right"/>
+             </div>
+			<img id="computer" src="../img/images/head.gif " align="middle">
+		</div><!--end header-->
+		<div id="main">
+			<div id="left">
+				<div id="menu"><!--ID选择器-->
+			<ul><!--无排序列表实现页面导航，ul中多个li列表项-->
+				<li><a href="main.html"target="main">首页</a></li>
+				<li><a href="olLearning.html"target="main">在线学习</a></li>
+				<<li><a href="main.html"target="main">通知公告</a></li>
+				<li><a href="main.html"target="main">个人信息修改</a></li>
+				<li><a href="main.html"target="main">注销</a></li>
+			</ul>
+		</div>
+				<iframe src="user.html" frameborder="0" name="onlineUser" width="100%" height="310px" scrolling="auto"></iframe>
+			</div>
+			<div id="right"><p>web课程简介</p></div>
+		</div><!--end main-->
+		<div id="footer">
+			<p>&copy;班级：姓名：学号：制作<a href="#">学院网站</a></p>
+		</div><!--end footer-->
+	</body>
+</html>
